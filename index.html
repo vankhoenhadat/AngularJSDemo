@@ -8,13 +8,67 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="angular.js"></script>
-		<script type="text/javascript" src="angular-route.js"></script>
-		<script type="text/javascript" src="demo_app.js"></script>
-		<script type="text/javascript" src="demo_controller.js"></script>
-	</head>
-	<body ng-app="DemoApp">
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" type="text/css" href="visla.css">
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="angular-route.js"></script>
+	<script type="text/javascript" src="demo_app.js"></script>
+	<script type="text/javascript" src="demo_controller.js"></script>
+
+
+	<style type="text/css">
+    
+    #menuSlide {
+    width: 95px;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0px;
+    left: -185px;
+    -webkit-transition: left 0.2s ease-in;
+    transition: left 0.2s ease-in;
+    -webkit-backface-visibility: hidden !important;
+    -webkit-box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
+    display: block;
+    z-index: 100;
+    padding: 5px 0 0;
+}
+#menuSlide.in {
+    left: 0px;
+}
+#menuSlide ul li {
+    display: block;
+    list-style-type: none;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.no-padding {
+    padding: 0px !important;
+}
+#menuSlide a:hover, #menuSlide a.active {
+    color: #1fa67a;
+}
+#menuSlide a {
+    text-decoration: none;
+    display: block;
+    margin: 0 10px;
+    position: relative;
+    color: #808588;
+    text-align: center;
+}
+#menuSlide a i {
+    font-size: 25px;
+    display: block;
+}
+a.smoothScroll span {
+    display: block;
+}
+	</style>
+</head>
+<body ng-app="DemoApp">
 
 	<h1>Bookings hotel</h1>
 
@@ -70,6 +124,49 @@
 
 	</div>
 
+	<div id="menuSlide" class="hidden-xs in hide">
+    <ul class="no-padding">
+        <li class="no-padding">
+            <img src="/bundles/default/img/logo-color.png?1cc728e" alt="visla.vn" class="img-responsive">
+        </li>
+        <li>
+            <a href="#apartment" id="menuA" title="Các tin đăng của căn hộ Khu dân cư Saigonres" class="smoothScroll active">
+                <i class="icon-building39"></i>
+                <span>Can Ho</span>
+            </a>
+        </li>
+        <li>
+            <a href="#summary" id="menuB" title="Giới thiệu chung về căn hộ Khu dân cư Saigonres" class="smoothScroll">
+                <i class="icon-compass-1"></i>
+                <span>Gio thieu chung</span>
+            </a>
+        </li>
+        <li>
+            <a href="#location" id="menuC" title="Địa chỉ và vị trí của căn hộ Khu dân cư Saigonres" class="smoothScroll">
+                <i class="icon-location-3"></i>
+                <span>Vi tri</span>
+            </a>
+        </li>               
+        <li>
+            <a href="#amenity" title="tiên ích của căn hộ Khu dân cư Saigonres" id="menuD" class="smoothScroll">
+                <i class="icon-swimming-pool1"></i>
+                <span>Tien ich</span>
+            </a>
+        </li>
+        <li>
+            <a href="#checkout" title="Hình thức thanh toán khi mua căn hộ Khu dân cư Saigonres" id="menuE" class="smoothScroll">
+                <i class="icon-money"></i>
+                <span>Thanh toan</span>
+            </a>
+        </li> 
+        <li>
+            <a href="/du-an/danh-sach" title="Danh sách căn hộ trên Visla.vn">
+                <i class=" icon-left-big"></i>
+                <span>Tro ve danh sach</span>
+            </a>
+        </li>                               
+    </ul>   
+</div>
 
 	</body>
 </html>
